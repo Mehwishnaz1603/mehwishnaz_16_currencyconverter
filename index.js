@@ -23,15 +23,14 @@ let user_answer = await inquirer.prompt([
         message: chalk.bold.underline("Enter Your Amount You want to Convert:"),
     }
 ]);
-{
-    if (currency.FromCurrency == currency.ToCurrency) {
-        console.log(`No need to convert!`);
-    }
+if (user_answer.FromCurrency === user_answer.ToCurrency)
+    console.log(chalk.bold.bgBlueBright("No Need To Convert!!"));
+else {
+    let FromCurrencyAmount = currency[user_answer.FromCurrency];
+    let ToCurrencyAmount = currency[user_answer.ToCurrency];
+    let Amount = user_answer.Amount;
+    let BaseAmount = Amount / FromCurrencyAmount;
+    let TotalConvertedAmount = BaseAmount * ToCurrencyAmount;
+    console.log(chalk.bold.underline("Your Converted Currency Aamount is:"));
+    console.log(chalk.bold.bgBlueBright.italic(TotalConvertedAmount));
 }
-let FromCurrencyAmount = currency[user_answer.FromCurrency];
-let ToCurrencyAmount = currency[user_answer.ToCurrency];
-let Amount = user_answer.Amount;
-let BaseAmount = Amount / FromCurrencyAmount;
-let TotalConvertedAmount = BaseAmount * ToCurrencyAmount;
-console.log(chalk.bold.underline("Your Converted Currency Aamount is:"));
-console.log(chalk.bold.bgBlueBright.italic(TotalConvertedAmount));
