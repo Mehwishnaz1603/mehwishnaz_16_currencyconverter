@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from "inquirer";   import chalk from "chalk";
 const currency: any = {USD: 1,  PKR: 277.54,  EURO: 0.92,  
     RUB: 92.58,   SAR: 3.75,    INR: 83.30,  GBP: 0.79,    AUD: 1.52,    
