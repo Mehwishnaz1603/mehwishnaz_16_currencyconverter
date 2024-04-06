@@ -30,3 +30,4 @@ let BaseAmount = Amount / FromCurrencyAmount
 let TotalConvertedAmount = BaseAmount* ToCurrencyAmount
 console.log(chalk.bold.underline("Your Converted Currency Aamount is:"));
 console.log(chalk.bold.bgBlueBright.italic(TotalConvertedAmount));
+
